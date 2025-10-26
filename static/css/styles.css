@@ -1,0 +1,402 @@
+/* ================================
+   THEME TOKENS
+================================ */
+:root{
+  --brand:#18a957;         /* main green */
+  --brand-dark:#0f7e41;    /* darker hover green */
+  --ink:#0f172a;           /* body text */
+  --muted:#64748b;         /* muted text */
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+/* ================================
+   BASE
+================================ */
+html{
+  scroll-behavior: smooth;
+}
+*{ box-sizing:border-box; }
+body{ margin:0; font-family:'Inter', sans-serif; color:var(--ink); line-height:1.6; }
+a{ text-decoration:none; color:inherit; }
+img{ max-width:100%; display:block; }
+.container{ width:92%; max-width:1200px; margin:0 auto; }
+
+/* Grid helpers */
+.grid{ display:grid; gap:24px; }
+.grid-2{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+.grid-3{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+@media (max-width:980px){
+  .grid-2, .grid-3{ grid-template-columns:1fr; }
+}
+
+/* ================================
+   HEADER & NAV
+================================ */
+.header{ position:sticky; top:0; z-index:50; background:rgba(255, 255, 255, 0.8); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow:var(--shadow); }
+.nav{ display:flex; align-items:center; justify-content:space-between; padding:12px 0; }
+.brand{ display:flex; gap:10px; align-items:center; font-weight:700; }
+.menu{ display:flex; gap:18px; align-items:center; }
+.burger{ display:none; background:#eee; border-radius:8px; padding:.4rem .6rem; border:none; cursor:pointer; }
+
+.menu a.is-active{
+  color: var(--brand);
+  font-weight: 700;
+}
+
+@media (max-width:860px){
+  .menu{
+    position:fixed; inset:60px 0 auto 0; background:#fff; box-shadow:var(--shadow);
+    padding:16px; display:none; flex-direction:column;
+  }
+  .menu.open{ display:flex; }
+  .burger{ display:block; }
+}
+
+/* Buttons */
+.btn{ display:inline-flex; align-items:center; gap:.5rem; padding:.8rem 1.1rem; border-radius:10px; border:1px solid #e5e7eb; font-weight:600; }
+.btn:focus-visible{ outline:3px solid rgba(24,169,87,.35); outline-offset:2px; }
+.btn-primary{ background:var(--brand); color:#fff; border-color:transparent; }
+.btn-primary:hover{ background:var(--brand-dark); }
+.btn-outline{ background:#fff; color:var(--ink); }
+.btn-whatsapp{ background:#25D366; color:#fff; border-color:transparent; }
+
+/* ================================
+   HERO SLIDER
+================================ */
+.hero.slider{ position:relative; height:clamp(420px,70vh,720px); overflow:hidden; }
+.hero .slide{
+  position:absolute; inset:0;
+  background:linear-gradient(to bottom,rgba(0,0,0,.45),rgba(0,0,0,.25)), var(--bg) center/cover;
+  opacity:0; transition:opacity .6s ease;
+}
+.hero .slide.is-active{ opacity:1; z-index: 1; }
+.hero .hero-inner{
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  color:#fff; max-width:800px; width:90%; text-align:center;
+}
+.hero .hero-inner h1{
+  font-size: clamp(2.8rem, 6vw, 4.2rem);
+  font-weight: 900;
+  /* Gradient text effect */
+  background: linear-gradient(to right, #ffffff 50%, #a7f3d0); /* More prominent white to light green */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero .actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+.hero .nav{ position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,.6); border:none; border-radius:50%; width:40px; height:40px; }
+.hero .prev{ left:12px; } .hero .next{ right:12px; }
+
+/* ================================
+   STATS SECTION
+================================ */
+.stats-section {
+  background: #f8fafc; /* bg-slate-50 */
+  padding: 40px 0;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+.stats-section .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.stat-item {
+  text-align: center;
+  padding: 20px;
+}
+.stat-item .stat-ico { margin: 0 auto 12px; width: 44px; height: 44px; color: var(--brand); filter: drop-shadow(0 2px 6px rgba(24,169,87,.25)); }
+.stat-item .n { font-size: 2.75rem; font-weight: 800; line-height: 1.1; color: #111827; }
+.stat-item .t { color: var(--muted); margin-top: 4px; }
+
+@media (max-width: 768px) {
+  .stats-section .container { grid-template-columns: 1fr; }
+  .stat-item:not(:last-child) { border-bottom: 1px solid #e2e8f0; }
+}
+
+/* ================================
+   CARDS / FORMS / TEXT
+================================ */
+.card{ border:1px solid #e5e7eb; border-radius:14px; padding:22px; background:#fff; box-shadow:var(--shadow); }
+.page-section { padding: 40px 0; }
+
+/* Font-family helpers */
+.font-inter { font-family: 'Inter', sans-serif; }
+
+/* Service Cards */
+.svc {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.svc:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,.1);
+}
+
+/* About Page Hero */
+.about-hero-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/about-hero.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Team Slider scrollbar */
+.slider-container::-webkit-scrollbar {
+    display: none;
+}
+.slider-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* ================================
+   ON-SCROLL ANIMATIONS
+================================ */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Default state for elements that will be animated */
+.animate-on-scroll {
+  opacity: 0;
+}
+
+/* When element becomes visible, apply the animation */
+.animate-on-scroll.is-visible.anim-fade-up {
+  animation: fade-up 0.8s ease-out forwards;
+}
+.animate-on-scroll.is-visible.anim-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+/* text-field styles — do NOT hit checkboxes/radios */
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #e5e7eb;
+}
+input:focus, select:focus, textarea:focus{ outline:3px solid rgba(24,169,87,.25); border-color:#bbf7d0; }
+
+/* ================================
+   QUICK ACTIONS: COLLAPSIBLE GREEN DOCK
+   (WhatsApp • Call • Enquire • Calculator)
+================================ */
+.rail-dock{
+  position:fixed; right:14px; top:50%; transform:translateY(-50%);
+  z-index:60; display:flex; flex-direction:column; align-items:flex-end; gap:10px;
+}
+.rail-toggle{
+  width:56px; height:56px; border:0; border-radius:12px;
+  background:var(--brand); box-shadow:0 10px 24px rgba(0,0,0,.18);
+  display:grid; place-items:center; cursor:pointer;
+  transition:background .15s ease, transform .15s ease;
+}
+.rail-toggle:hover{ background:var(--brand-dark); transform:translateX(-1px); }
+.rail-toggle svg{ width:26px; height:26px; fill:#fff; }
+
+/* panel (hidden by default) */
+.rail-list{
+  list-style:none; margin:0; padding:10px; border-radius:14px;
+  background:#fff; border:1px solid #e5e7eb; box-shadow:0 12px 30px rgba(0,0,0,.12);
+  display:grid; gap:10px;
+  transform:translateX(10px); opacity:0; pointer-events:none;
+  transition:transform .18s ease, opacity .18s ease;
+}
+/* reveal on hover (desktop) or when toggled (mobile) */
+.rail-dock:hover .rail-list,
+.rail-dock.open .rail-list{ transform:translateX(0); opacity:1; pointer-events:auto; }
+
+/* buttons inside panel */
+.rail-btn{
+  width:56px; height:56px; border:0; border-radius:10px;
+  display:grid; place-items:center; cursor:pointer;
+  background:var(--brand); color:#fff;
+  transition:transform .15s ease, filter .15s ease, background .15s ease;
+}
+.rail-btn:hover{ transform:translateX(-2px); background:var(--brand-dark); }
+.rail-btn svg{ width:26px; height:26px; }
+
+/* WhatsApp distinct green */
+.rail-wa{ background:#25D366; } .rail-wa:hover{ background:#1fb45a; }
+
+/* staggered appearance */
+.rail-list .rail-btn{ opacity:0; transform:translateX(8px); transition:transform .22s ease, opacity .22s ease; }
+.rail-dock:hover .rail-list .rail-btn,
+.rail-dock.open  .rail-list .rail-btn{ opacity:1; transform:translateX(0); }
+.rail-list .rail-btn:nth-child(1){ transition-delay:.02s; }
+.rail-list .rail-btn:nth-child(2){ transition-delay:.06s; }
+.rail-list .rail-btn:nth-child(3){ transition-delay:.10s; }
+.rail-list .rail-btn:nth-child(4){ transition-delay:.14s; }
+
+/* mobile position + sizing */
+@media (max-width:860px){
+  .rail-dock{ right:10px; top:auto; bottom:90px; transform:none; }
+  .rail-toggle, .rail-btn{ width:52px; height:52px; }
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion:reduce){
+  .rail-list, .rail-btn{ transition:none !important; }
+}
+
+/* Hard kill any legacy floating calc or old rails */
+.floating-calc, .action-rail{ display:none !important; }
+
+/* ================================
+   FOOTER (GREEN THEME, HIGH CONTRAST)
+   Use in HTML: <footer class="site-footer">…</footer>
+================================ */
+.site-footer{
+  background:#0f7e41;           /* darker green for contrast */
+  color:#f1f5f9;                /* light text */
+  margin-top:60px;
+  box-shadow:0 -10px 30px rgba(0,0,0,.08) inset;
+}
+.site-footer a{ color:#ffffff; transition:color .2s ease; }
+.site-footer a:hover{ color:#a7f3d0; }
+
+.footer-top{ padding:40px 0; }
+.site-footer h4{ color:#fff; margin:0 0 14px; font-size:1.15rem; font-weight:700; }
+
+.ft-col{ min-width:0; }
+.ft-row{ display:flex; gap:10px; align-items:flex-start; margin:8px 0; line-height:1.6; }
+.ft-row svg{ width:18px; height:18px; fill:#ffffff; opacity:.9; margin-top:4px; }
+
+.ft-socials{ display:flex; gap:10px; margin-top:10px; }
+.ft-socials a{
+  display:inline-grid; place-items:center; width:34px; height:34px;
+  border:1px solid rgba(255,255,255,.6); border-radius:50%; font-weight:600; color:#ffffff;
+}
+.ft-socials a:hover{ background:#ffffff; color:#0f7e41; border-color:#ffffff; }
+
+.ft-links{ list-style:none; padding:0; margin:0; display:grid; gap:8px; }
+.ft-links li a{ position:relative; padding-left:18px; }
+.ft-links li a::before{ content:"›"; position:absolute; left:0; top:0; color:#d1fae5; }
+
+/* bottom bar */
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.3);
+  background:#0d6935;           /* even darker strip */
+  color:#e2e8f0;
+  padding:12px 0; font-size:.95rem;
+}
+.footer-bottom .container{
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:space-between;
+}
+.footer-bottom a{ color:#ffffff; font-weight:600; }
+.footer-bottom a:hover{ color:#a7f3d0; }
+
+@media (max-width:980px){
+  .footer-top.grid{ grid-template-columns:1fr; } /* stack columns on mobile */
+}
+/* Two-column footer layout (balanced) */
+.footer-grid{
+  grid-template-columns: 1.3fr 1fr;   /* address a bit wider than links */
+  align-items: start;
+  gap: 28px;
+}
+
+/* On tablets, make them equal columns */
+@media (max-width: 1100px){
+  .footer-grid{ grid-template-columns: 1fr 1fr; }
+}
+
+/* On phones, stack */
+@media (max-width: 980px){
+  .footer-grid{ grid-template-columns: 1fr; }
+}
+
+/* Optional: make Quick Links into two slim columns on large screens */
+@media (min-width: 1100px){
+  .ft-links{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+  }
+}
+.ft-row{ margin: 6px 0; }
+/* --- Clean copyright strip --- */
+.footer-bottom{
+  background:#0d6935;               /* dark green strip */
+  border-top:1px solid rgba(255,255,255,.25);
+  padding:12px 0;
+}
+
+.footer-bottom .container{
+  /* kill any accidental card-like styles */
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  border-radius:0 !important;
+
+  /* layout */
+  display:flex;
+  justify-content:center;           /* center the text */
+  align-items:center;
+  gap:12px;                         /* spacing around the dot */
+  padding:0;                        /* no extra padding box */
+}
+
+/* copyright text + links */
+.footer-bottom,
+.footer-bottom a{
+  color:#eaf6ee;                    /* readable on dark green */
+  font-weight:500;
+}
+
+/* optional smaller text */
+.footer-bottom{ font-size:.95rem; }
+
+/* if you want left-aligned on wide screens instead of centered */
+@media (min-width: 1100px){
+  .footer-bottom .container{ justify-content:space-between; }
+}
+
+
+/* === AI placeholders and icons === */
+.service-card { display:flex; flex-direction:column; gap:12px; }
+.service-hero{ margin:0; }
+.service-hero img{
+  width:100%; height:180px; object-fit:cover; border-radius:12px;
+  box-shadow: var(--shadow);
+}
+.service-hero figcaption{ margin-top:6px; font-weight:600; color:var(--muted); }
+
+.stat .stat-head{ display:flex; align-items:center; gap:14px; }
+.stat .stat-ico{ width:36px; height:36px; color:var(--brand); filter: drop-shadow(0 2px 6px rgba(24,169,87,.25)); }
+
+.about-photo img{ width:100%; height:100%; min-height:260px; object-fit:cover; border-radius:14px; }
+
+.quote-hero img{ width:100%; height:220px; object-fit:cover; border-radius:12px; }
+@media (max-width:860px){
+  .service-hero img{ height:160px; }
+  .quote-hero img{ height:180px; }
+}
+/* --- FORCE real checkbox, not a text field --- */
+label.consent input[type="checkbox"],
+.card input[type="checkbox"],
+input[type="checkbox"]{
+  -webkit-appearance: checkbox !important;
+  -moz-appearance: checkbox !important;
+  appearance: checkbox !important;
+
+  width:18px !important;
+  height:18px !important;
+  padding:0 !important;
+  border:none !important;
+  background:none !important;
+  box-shadow:none !important;
+
+  display:inline-block !important;
+  vertical-align:middle !important;
+  margin: 3px 6px 0 0 !important;
+
+  /* optional: green tick color in modern browsers */
+  accent-color: var(--brand) !important;
+}

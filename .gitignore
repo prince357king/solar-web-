@@ -1,0 +1,8 @@
+.venv/
+*.pyc
+.env
+instance/
+*.sqlite
+.vscode/
+build/
+dist/

@@ -1,0 +1,332 @@
+{% extends "base.html" %}
+{% block title %}Solar EPC Company — VIDYUT ENERGY SYSTEMS PVT. LTD{% endblock %}
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero slider">
+  <div class="slide is-active" style="--bg:url('{{ url_for('static', filename='img/hero1.jpg') }}')">
+    <div class="hero-inner">
+      <h1>Cut Your Electricity Bill With Solar</h1>
+      <p>Smart Solar. Smarter Future.</p>
+      <div class="actions">
+        <button class="btn btn-primary" onclick="scrollToQuote()">Get a Quote</button>
+        <button class="btn btn-outline" onclick="openCalculator()">Solar Calculator</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide" style="--bg:url('{{ url_for('static', filename='img/hero2.jpg') }}')">
+    <div class="hero-inner">
+      <h1>Commercial & Industrial Solar</h1>
+      <p>From rooftops to large-scale projects — we design, build, and deliver sustainable solar systems for
+ a brighter, greener tomorrow.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="{{ url_for('services') }}">Our Services</a>
+        <button class="btn btn-outline" onclick="openCalculator()">Solar Calculator</button>
+      </div>
+    </div>
+  </div>
+
+  <button class="nav prev" aria-label="Previous">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+  </button>
+  <button class="nav next" aria-label="Next">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+  </button>
+</section>
+
+<!-- Stats Section -->
+<section class="bg-gray-50 py-12 border-t border-b border-gray-200 font-inter">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+            <!-- Stat 1: Happy Customers -->
+            <div class="stat-item animate-on-scroll anim-fade-up">
+                <div class="stat-ico">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <title>Happy Customers</title>
+                        <circle cx="12" cy="12" r="10"/>
+                        <circle cx="9" cy="10" r="1.6" fill="currentColor"/>
+                        <circle cx="15" cy="10" r="1.6" fill="currentColor"/>
+                        <path d="M7.5 14.5c1.2 1.3 2.8 2 4.5 2s3.3-.7 4.5-2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="n text-4xl font-extrabold text-gray-900" data-to="527">256</div>
+                <p class="text-gray-600 mt-1">Happy Customers</p>
+            </div>
+
+            <!-- Stat 2: Projects Completed -->
+            <div class="stat-item animate-on-scroll anim-fade-up" style="animation-delay: 0.1s;">
+                <div class="stat-ico">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <title>Projects Completed</title>
+                        <rect x="3" y="5" width="18" height="14" rx="2"/>
+                        <path d="M6 12h12M6 9h6M6 15h8" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="n text-4xl font-extrabold text-gray-900" data-to="850">126</div>
+                <p class="text-gray-600 mt-1">Projects Completed</p>
+            </div>
+
+            <!-- Stat 3: Expert Engineers -->
+            <div class="stat-item animate-on-scroll anim-fade-up" style="animation-delay: 0.2s;">
+                <div class="stat-ico">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <title>Expert Engineers</title>
+                        <path d="M6 10a6 6 0 0112 0v2H6v-2z"/>
+                        <path d="M4 14h16v3a2 2 0 01-2 2H6a2 2 0 01-2-2v-3z"/>
+                    </svg>
+                </div>
+                <div class="n text-4xl font-extrabold text-gray-900" data-to="25">19</div>
+                <p class="text-gray-600 mt-1">Expert Engineers</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% block head_extra %}
+{% endblock %}
+
+<!-- New About Section -->
+<div class="bg-gray-50 py-12 animate-on-scroll anim-fade-up font-inter">
+    <section class="w-full max-w-6xl mx-auto bg-white shadow-sm rounded-2xl overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+            
+            <!-- Left: Image Column -->
+            <div class="lg:order-1">
+                <img src="{{ url_for('static', filename='img/founder.jpg') }}" 
+                     alt="Company Founder in office" 
+                     class="w-full h-full object-cover min-h-[400px] lg:min-h-0">
+            </div>
+            
+            <!-- Right: Text Content Column -->
+            <div class="lg:order-2 flex flex-col justify-center p-8 md:p-12 lg:p-16">
+                <span class="text-sm font-semibold text-green-500 uppercase tracking-wider mb-3">
+                    About Us
+                </span>
+                
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 leading-snug">
+                    Decades of Solar Expertise Since 2015
+                </h2>
+                
+                <p class="text-gray-600 text-base leading-relaxed mb-6">
+                    Over 10 Years of Dedicated Service in Solar & Renewable Energy Solutions. Established in 2015, Solar Pulse brings over a decade of expertise to the solar industry.
+                </p>
+                
+                <!-- Feature List -->
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center">
+                        <!-- Checkmark Icon -->
+                        <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-gray-700 font-medium">Experience</span>
+                    </li>
+                    <li class="flex items-center">
+                        <!-- Checkmark Icon -->
+                        <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-gray-700 font-medium">Expertise</span>
+                    </li>
+                    <li class="flex items-center">
+                        <!-- Checkmark Icon -->
+                        <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-gray-700 font-medium">Innovation</span>
+                    </li>
+                </ul>
+                
+                <!-- Action Button -->
+                <a href="{{ url_for('about') }}" 
+                   class="inline-block w-auto text-center bg-green-500 text-white font-semibold py-3 px-8 rounded-full shadow-md hover:bg-green-600 hover:shadow-lg transition-all duration-300 ease-in-out">
+                    Explore More
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="container animate-on-scroll anim-fade-up">
+    <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Our Services</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">We offer a complete range of solar solutions for commercial, domestic, and agricultural needs.</p>
+    </div>
+  <div class="grid grid-3">
+    <article class="card svc" style="animation-delay: 0.1s;">
+      <figure class="service-hero">
+        <!-- <img src="{{ url_for('static', filename='img/commercial-ai.svg') }}" alt="Commercial Solar"> -->
+        <img src="{{ url_for('static', filename='img/service-commercial.jpg') }}" alt="Large-scale commercial solar panel installation on a factory roof">
+        <figcaption>Commercial Solar</figcaption>
+      </figure>
+      <h3>Commercial Solar Plant</h3>
+      <ul>
+        <li>High ROI designs</li>
+        <li>Net-metering &amp; compliance</li>
+        <li>Real-time monitoring</li>
+      </ul>
+      <a class="btn btn-primary" href="{{ url_for('services') }}#commercial">Read More</a>
+    </article>
+
+    <article class="card svc" style="animation-delay: 0.2s;">
+      <figure class="service-hero">
+        <!-- <img src="{{ url_for('static', filename='img/domestic-ai.svg') }}" alt="Domestic Solar"> -->
+        <img src="{{ url_for('static', filename='img/service-domestic.jpg') }}" alt="Rooftop solar panels on a modern home">
+        <figcaption>Domestic Solar</figcaption>
+      </figure>
+      <h3>Domestic Solar Plant</h3>
+      <ul>
+        <li>Bill savings up to 80%</li>
+        <li>Top-tier modules</li>
+        <li>Quick installation</li>
+      </ul>
+      <a class="btn btn-primary" href="{{ url_for('services') }}#domestic">Read More</a>
+    </article>
+
+    <article class="card svc" style="animation-delay: 0.3s;">
+      <figure class="service-hero">
+        <!-- <img src="{{ url_for('static', filename='img/kusum-ai.svg') }}" alt="Kusum Yojana"> -->
+        <img src="{{ url_for('static', filename='img/service-kusum.jpg') }}" alt="Solar water pump in a farm field under the Kusum Yojana scheme">
+        <figcaption>Kusum Yojana</figcaption>
+      </figure>
+      <h3>Kusum Yojana</h3>
+      <ul>
+        <li>Govt subsidy guidance</li>
+        <li>Pump solarization</li>
+        <li>End-to-end support</li>
+      </ul>
+      <a class="btn btn-primary" href="{{ url_for('services') }}#kusum">Read More</a>
+    </article>
+  </div>
+</section>
+
+<!-- New Quote Section -->
+<section id="quote" class="w-full max-w-7xl mx-auto bg-white shadow-xl rounded-3xl overflow-hidden my-16 font-inter animate-on-scroll anim-fade-up">
+    <div class="grid grid-cols-1 lg:grid-cols-2">
+        
+        <!-- Left: Image Column -->
+        <div class="lg:order-1 relative quote-image-overlay">
+            <img src="{{ url_for('static', filename='img/quote-banner.png') }}" 
+                 alt="Aerial view of solar panel installation" 
+                 class="w-full h-full object-cover min-h-[450px] lg:min-h-0 relative z-0">
+            <div class="absolute inset-0 z-10 flex items-center justify-center p-8">
+                <div class="text-white text-center">
+                    <h3 class="text-3xl font-bold mb-2 drop-shadow-md">Future-Proof Your Energy</h3>
+                    <p class="text-lg drop-shadow-sm">Sustainable solutions for a brighter tomorrow.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right: Form Content Column -->
+        <div class="lg:order-2 flex flex-col justify-center p-8 md:p-12 lg:p-16 quote-form-bg-pattern relative">
+            <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg relative z-20">
+                <span class="text-sm font-semibold text-green-600 uppercase tracking-wider mb-3 block">Exclusive Offer</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 leading-tight">
+                    Get Your <span class="text-green-600">Free Solar Quote</span>
+                </h2>
+                <p class="text-gray-600 text-base leading-relaxed mb-8">
+                    Discover tailored solar solutions for your home or business. Fill out the form below to get started!
+                </p>
+                
+                <!-- Quote Form -->
+                <form id="quoteForm" class="space-y-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="name" class="sr-only">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-all duration-200 text-gray-800 placeholder-gray-500">
+                        </div>
+                        <div>
+                            <label for="phone" class="sr-only">Your Phone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Your Phone" required pattern="[0-9+ ]{8,}" class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-all duration-200 text-gray-800 placeholder-gray-500">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="email" class="sr-only">Your Email</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email (Optional)" class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-all duration-200 text-gray-800 placeholder-gray-500">
+                        </div>
+                        <div>
+                            <label for="service" class="sr-only">Service Type</label>
+                            <div class="relative">
+                                <select id="service" name="service" class="appearance-none w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-all duration-200 text-gray-700">
+                                    <option value="" disabled selected>Select Solar Type</option>
+                                    <option value="domestic">Domestic Solar</option>
+                                    <option value="commercial">Commercial Solar</option>
+                                    <option value="kusum">Kusum Yojana</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-600">
+                                    <svg class="fill-current h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 6.757 7.586 5.343 9l4.95 4.95z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="message" class="sr-only">Your Message</label>
+                        <textarea id="message" name="message" placeholder="Tell us more about your needs..." rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-all duration-200 resize-none text-gray-800 placeholder-gray-500"></textarea>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <input type="checkbox" name="consent" id="consent-quote" required class="mt-1 h-4 w-4 accent-green-600">
+                        <label for="consent-quote" class="text-sm text-gray-600">I agree to the <a href="{{ url_for('terms') }}" class="text-green-600 hover:underline">Terms</a> and <a href="{{ url_for('privacy') }}" class="text-green-600 hover:underline">Privacy Policy</a>.</label>
+                    </div>
+                    <button type="submit" class="inline-flex items-center justify-center w-full md:w-auto bg-green-600 text-white font-bold py-3 px-10 rounded-full shadow-lg hover:bg-green-700 hover:scale-105 transition-all duration-300 ease-in-out transform">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        Get My Free Quote
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="bg-gray-50 py-16 font-inter animate-on-scroll anim-fade-up">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+            <span class="text-sm font-semibold text-green-600 uppercase tracking-wider">Testimonials</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mt-2">What Our Clients Say</h2>
+            <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Real feedback from our satisfied customers who are now enjoying the benefits of solar energy.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Testimonial 1 -->
+            <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col transition-transform transform hover:-translate-y-2">
+                <div class="flex-grow">
+                    <p class="text-gray-700 italic">“Professional execution, reliable service, and a team that truly understands solar energy. The whole process was smooth and efficient.”</p>
+                </div>
+                <div class="mt-6">
+                    <div class="flex items-center">
+                        <div class="font-bold text-gray-900">Vikram Choudhary</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col transition-transform transform hover:-translate-y-2">
+                <div class="flex-grow">
+                    <p class="text-gray-700 italic">“The team made the entire process seamless, from the initial consultation to the final installation. Our electricity bills have dropped significantly. Highly recommended!”</p>
+                </div>
+                <div class="mt-6">
+                    <div class="flex items-center">
+                        <div class="font-bold text-gray-900">R. Sharma</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col transition-transform transform hover:-translate-y-2">
+                <div class="flex-grow">
+                    <p class="text-gray-700 italic">“Incredible customer service! They answered all my questions and the post-installation support has been excellent. A trustworthy and professional company.”</p>
+                </div>
+                <div class="mt-6">
+                    <div class="flex items-center">
+                        <div class="font-bold text-gray-900">Priya K.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

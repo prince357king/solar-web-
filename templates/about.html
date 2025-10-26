@@ -1,0 +1,266 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us — VIDYUT ENERGY SYSTEMS PVT. LTD{% endblock %}
+{% block head_extra %}
+{% endblock %}
+{% block content %}
+
+    <!-- Hero Section -->
+    <header class="about-hero-bg text-white animate-on-scroll anim-fade-up">
+        <div class="container mx-auto px-6 py-24 md:py-32 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">About Vidyut Energy</h1>
+            <p class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto">Powering a Sustainable Rajasthan.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-16 font-inter">
+
+        <!-- Our Mission Section -->
+        <section class="mb-20 animate-on-scroll anim-fade-up">
+            <div class="flex flex-col md:flex-row items-center bg-white p-8 rounded-lg shadow-lg overflow-hidden">
+                <div class="md:w-1/2 md:pr-10 mb-6 md:mb-0">
+                    <h2 class="text-3xl font-bold text-green-600 mb-4">Our Mission</h2>
+                    <p class="text-lg text-gray-700 mb-4">
+                        Our mission is to make renewable energy accessible and affordable for everyone. We believe that solar power is not just an alternative, but the future of energy. We are committed to providing top-quality solar solutions that help our customers save money, reduce their carbon footprint, and achieve energy independence.
+                    </p>
+                    <p class="text-gray-600">
+                        We are a forward-thinking solar energy company committed to providing sustainable and cost-effective
+ power solutions across residential, commercial, and industrial sectors. With a strong foundation in
+ technical expertise and business excellence, our team ensures every project is executed with precision,
+ quality, and on-time delivery.
+                </div>
+                <div class="md:w-1/2 anim-zoom-in relative rounded-lg shadow-md overflow-hidden">
+                    <img src="{{ url_for('static', filename='img/clean-energy.jpg') }}" alt="Clean energy graphic with wind turbines and solar panels" class="rounded-lg shadow-md object-cover w-full h-full">
+                    <div class="absolute inset-0 bg-gradient-to-t from-green-900/50 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <h3 class="text-2xl font-bold text-white leading-tight drop-shadow-md">
+                            Clean Energy for a Better World
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Story Section
+        <section class="mb-20 animate-on-scroll anim-fade-up">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Our Story</h2>
+            <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <p class="text-gray-700 mb-4">
+                    Founded in 2015 by a team of passionate engineers and environmentalists, Vidyut Energy started with a simple idea: to harness the power of the sun to create a sustainable future. We saw the potential for solar energy to revolutionize the way we power our lives, but we also saw the barriers that homeowners and businesses faced.
+                </p>
+                <p class="text-gray-700">
+                    From our humble beginnings, we've grown into a leading solar provider, having helped thousands of customers make the switch to clean energy. Our journey has been driven by a relentless focus on quality, innovation, and a genuine desire to make a difference.
+                </p>
+            </div>
+        </section> -->
+
+        <!-- Projected Growth Achievements Section -->
+        <section class="my-20 animate-on-scroll anim-fade-up">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Achievements (Projected Growth)</h2>
+                <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Year (Projected)
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Installed Capacity
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200 text-center">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2024</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-lg font-bold text-green-700">8 Cr</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2025</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-lg font-bold text-green-700">18 Cr</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2026</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-lg font-bold text-green-700">30 Cr</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2027</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-lg font-bold text-green-700">100 Cr (Target)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Values Section -->
+        <section class="mb-20 animate-on-scroll anim-fade-up">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Core Values</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Value 1: Sustainability -->
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center transition-transform transform hover:-translate-y-2 anim-fade-up">
+                    <div class="text-green-600 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.105 0 2 .895 2 2s-.895 2-2 2-2-.895-2-2 .895-2 2 2zm0 8c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2zm0 8c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2zM3 10h18M3 14h18m-9-4v8" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Sustainability</h3>
+                    <p class="text-gray-600">We are committed to protecting our planet for future generations by promoting clean energy solutions.</p>
+                </div>
+                <!-- Value 2: Quality -->
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center transition-transform transform hover:-translate-y-2 anim-fade-up">
+                    <div class="text-green-500 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Quality</h3>
+                    <p class="text-gray-600">We use only the highest-quality materials and certified professionals to ensure your system lasts for decades.</p>
+                </div>
+                <!-- Value 3: Customer Focus -->
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center transition-transform transform hover:-translate-y-2 anim-fade-up">
+                    <div class="text-emerald-500 mb-4"> {# Changed from yellow-500 for theme consistency #}
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Customer Focus</h3>
+                    <p class="text-gray-600">Your satisfaction is our top priority. We're here to support you every step of the way.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership Team Slider (from previous integration) -->
+        <div class="bg-gray-50 py-12 animate-on-scroll anim-fade-up">
+    <section class="team-section bg-white w-full max-w-6xl mx-auto rounded-2xl shadow-sm overflow-hidden p-8 md:p-12 ">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <!-- Left: Text Content -->
+            <div class="flex flex-col justify-center anim-fade-up">
+                <span class="text-sm font-semibold text-indigo-600 uppercase tracking-wider mb-2">
+                    MEET FOUNDERS
+                </span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">
+                    Our Specialists Leadership Team
+                </h2>
+                <p class="text-gray-600 text-base leading-relaxed">
+                    Established in 2015, steadily growing as a leading EPC company. By 2024, ranked among Top 4
+ Solar Companies in Rajasthan for domestic & on-grid rooftop projects. FY 2024-25: Achieved
+ turnover of 180 crore (VES + VESR). FY 2025-26: Projected turnover 300 crore; over 100 MW
+ installations completed. Vision 2026: To surpass 1000 crore turnover and achieve 1 GW of total
+ solar capacity across India.
+                </p>
+            </div>
+            
+            <!-- Right: Slider -->
+            <div class="relative w-full anim-fade-up">
+                <!-- Slider Viewport -->
+                <div id="slider-container" class="slider-container flex overflow-x-auto snap-x snap-mandatory scroll-smooth space-x-6 pb-4">
+                    
+                    <!-- Slide 1 -->
+                    <div class="snap-start flex-shrink-0 w-full sm:w-1/2 md:w-2/5 lg:w-1/3">
+                        <div class="flex flex-col text-center h-full">
+                            <img src="{{ url_for('static', filename='img/naresh.jpg') }}" 
+                                 alt="Naresh Parihar" 
+                                 class="w-full h-auto object-cover rounded-xl mb-4 aspect-[4/5]">
+                            <h3 class="text-xl font-semibold text-gray-900">Naresh Parihar</h3>
+                            <span class="text-sm text-green-600 font-medium">Director</span>
+                            <p class="text-sm text-gray-600 mt-2 flex-grow">15+ years of multi-industry experience with deep knowledge in finance, banking & marketing.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="snap-start flex-shrink-0 w-full sm:w-1/2 md:w-2/5 lg:w-1/3">
+                        <div class="flex flex-col text-center h-full">
+                           <img src="{{ url_for('static', filename='img/Motaram Choudhary.jpeg') }}" 
+                                 alt="Motaram Choudhary" 
+                                 class="w-full h-auto object-cover rounded-xl mb-4 aspect-[4/5]">
+                            <h3 class="text-xl font-semibold text-gray-900">Motaram Choudhary</h3>
+                            <span class="text-sm text-green-600 font-medium">Director</span>
+                            <p class="text-sm text-gray-600 mt-2 flex-grow">22+ years in the energy sector and a reputed expert in Energy Storage Systems & Equipment Engineering.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 3 -->
+                    <div class="snap-start flex-shrink-0 w-full sm:w-1/2 md:w-2/5 lg:w-1/3">
+                        <div class="flex flex-col text-center h-full">
+                             <img src="{{ url_for('static', filename='img/Mohit Solanki.jpeg') }}" 
+                                 alt="Mohit Solanki" 
+                                 class="w-full h-auto object-cover rounded-xl mb-4 aspect-[4/5]">
+                            <h3 class="text-xl font-semibold text-gray-900">Mohit Solanki</h3>
+                            <span class="text-sm text-green-600 font-medium">Director</span>
+                            <p class="text-sm text-gray-600 mt-2 flex-grow">Dynamic, energetic, and customer-focused with 10 years of experience in team management, customer satisfaction & system development.</p>
+                        </div>
+                    </div>
+
+                    
+                </div>
+                
+                <!-- Slider Dots -->
+                <div id="slider-dots" class="flex justify-center space-x-2 mt-6">
+                    <!-- Dots will be generated by JavaScript -->
+                </div>
+            </div>
+            
+        </div>
+    </section>
+</div>
+
+        
+
+    </main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const sliderContainer = document.getElementById('slider-container');
+        if (!sliderContainer) return;
+        const sliderDotsContainer = document.getElementById('slider-dots');
+        const slides = Array.from(sliderContainer.children);
+        const slideCount = slides.length;
+        if (slideCount <= 1) return;
+
+        for (let i = 0; i < slideCount; i++) {
+            const dot = document.createElement('button');
+            dot.classList.add('slider-dot', 'w-2.5', 'h-2.5', 'rounded-full', 'bg-gray-300', 'transition-all', 'duration-300', 'ease-in-out');
+            dot.setAttribute('data-index', i);
+            dot.addEventListener('click', () => {
+                const scrollLeft = slides[i].offsetLeft - sliderContainer.offsetLeft;
+                sliderContainer.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+            });
+            sliderDotsContainer.appendChild(dot);
+        }
+
+        const dots = sliderDotsContainer.querySelectorAll('.slider-dot');
+        function updateActiveDot() {
+            const scrollLeft = sliderContainer.scrollLeft;
+            const containerWidth = sliderContainer.offsetWidth;
+            let activeIndex = 0;
+            let minDistance = Infinity;
+            slides.forEach((slide, index) => {
+                const slideCenter = (slide.offsetLeft - sliderContainer.offsetLeft) + slide.offsetWidth / 2;
+                const containerCenter = scrollLeft + containerWidth / 2;
+                const distance = Math.abs(slideCenter - containerCenter);
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    activeIndex = index;
+                }
+            });
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('bg-gray-900', index === activeIndex);
+                dot.classList.toggle('w-3', index === activeIndex);
+                dot.classList.toggle('h-3', index === activeIndex);
+                dot.classList.toggle('bg-gray-300', index !== activeIndex);
+            });
+        }
+        let scrollTimer;
+        sliderContainer.addEventListener('scroll', () => {
+            clearTimeout(scrollTimer);
+            scrollTimer = setTimeout(updateActiveDot, 100);
+        }, { passive: true });
+        updateActiveDot();
+    });
+</script>
+{% endblock %}
